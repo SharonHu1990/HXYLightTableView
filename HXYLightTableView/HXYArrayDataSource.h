@@ -30,7 +30,25 @@ typedef NSInteger(^TableViewNumberOfRowsInSectionConfigureBlock)(NSInteger secti
 @interface HXYArrayDataSource : NSObject <UITableViewDataSource>
 
 /**
- *  构造器1
+ *  构造器1：有多个section，每个section中cell行数不定时使用
+ *
+ *  @param aItems
+ *  @param aCellIdentifier
+ *  @param aSectionNumber                           section的数量
+ *  @param aNunberOfRowsInSectionConfigureBlock     配置每个section中cell的行数
+ *  @param aCellConfigureBlock                      配置每个cell的展现方式
+ *
+ *  @return Protocal Object
+ */
+-(id)initWithItems:(NSArray *)aItems
+    cellIdentifier:(NSString *)aCellIdentifier
+  numberOfSections:(NSInteger)aSectionNumber
+numberOfRowsInSectionConfigureBlock:(TableViewNumberOfRowsInSectionConfigureBlock)aNumberOfRowsInSectionConfigureBlock
+cellConfigureBlock:(TableViewCellConfigureBlock)aCellConfigureBlock;
+
+
+/**
+ *  构造器2：只有一个section
  *
  *  @param aItems
  *  @param aCellIdentifier

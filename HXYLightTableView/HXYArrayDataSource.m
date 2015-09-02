@@ -11,6 +11,7 @@
 @interface HXYArrayDataSource ()
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, copy) NSString *cellIdentifier;
+@property (nonatomic, assign) NSInteger numberOfSections;//section个数
 @property (nonatomic, copy) TableViewCellConfigureBlock configureCellBlock;
 @property (nonatomic, copy) TableViewNumberOfRowsInSectionConfigureBlock numberOfRowsInSectionConfigureBlock;
 
@@ -22,30 +23,26 @@
     return nil;
 }
 
--(id)initWithItems:(NSArray *)aItems
-    cellIdentifier:(NSString *)aCellIdentifier
-configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
+-(id)initWithItems:(NSArray *)aItems cellIdentifier:(NSString *)aCellIdentifier numberOfSections:(NSInteger)aSectionNumber numberOfRowsInSectionConfigureBlock:(TableViewNumberOfRowsInSectionConfigureBlock)aNumberOfRowsInSectionConfigureBlock cellConfigureBlock:(TableViewCellConfigureBlock)aCellConfigureBlock
 {
     self = [super init];
     if (self) {
         self.items = aItems;
-        self.cellIdentifier = [aCellIdentifier copy];
-        self.configureCellBlock = [aConfigureCellBlock copy];
+        self.cellIdentifier = aCellIdentifier;
+        self.numberOfRowsInSectionConfigureBlock = aNumberOfRowsInSectionConfigureBlock;
+        self.configureCellBlock = aCellConfigureBlock;
     }
     return self;
 }
 
--(id)initWithItems:(NSArray *)anItem cellIdentifier:(NSString *)aCellIdentifier numberOfSections:(NSInteger)aSectionNumber numberOfRowsInSectionConfigureBlock:(TableViewNumberOfRowsInSectionConfigureBlock)aNumberOfRowsInSectionBlock configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
+-(id)initWithItems:(NSArray *)aItems
+    cellIdentifier:(NSString *)aCellIdentifier
+configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
 {
-    self = [super init];
-    if (self) {
-        self.items = anItem;
-        self.cellIdentifier = [aCellIdentifier copy];
-        self.numberOfRowsInSectionConfigureBlock = [aNumberOfRowsInSectionBlock copy];
-        self.configureCellBlock = [aConfigureCellBlock copy];
-    }
-    return self;
+    return [self initWithItems:aItems cellIdentifier:aCellIdentifier numberOfSections:1 numberOfRowsInSectionConfigureBlock:nil cellConfigureBlock:aConfigureCellBlock];
 }
+
+
 
 -(id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -53,6 +50,12 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
 }
 
 #pragma mark - UITableViewDataSource 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.numberOfSections;
+}
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (self.numberOfRowsInSectionConfigureBlock) {
@@ -67,5 +70,11 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
     self.configureCellBlock(cell, [self itemAtIndexPath:indexPath], indexPath);
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 
 @end
