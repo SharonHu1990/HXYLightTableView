@@ -1,0 +1,14 @@
+//
+//  HXYLightTableView-Prefix.pch
+//  HXYLightTableView
+//
+//  Created by 胡晓阳 on 15/9/2.
+//  Copyright (c) 2015年 HXY. All rights reserved.
+//
+
+#ifndef HXYLightTableView_HXYLightTableView_Prefix_pch
+#define HXYLightTableView_HXYLightTableView_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+

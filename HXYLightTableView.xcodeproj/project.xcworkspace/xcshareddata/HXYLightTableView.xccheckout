@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0F01A077-9A5F-4B1D-9BA9-421D864AB3CA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HXYLightTableView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9AA5FCEBE7CC4457A19CA106FB63852FE9D20D96</key>
+		<string>https://github.com/SharonHu1990/HXYLightTableView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HXYLightTableView.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9AA5FCEBE7CC4457A19CA106FB63852FE9D20D96</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SharonHu1990/HXYLightTableView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9AA5FCEBE7CC4457A19CA106FB63852FE9D20D96</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9AA5FCEBE7CC4457A19CA106FB63852FE9D20D96</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HXYLightTableView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
