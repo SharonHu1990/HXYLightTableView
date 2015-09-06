@@ -1,14 +1,14 @@
 //
-//  HXYArrayDataSource.h
+//  BaseTableViewProtocol.h
 //  HXYLightTableView
 //
-//  Created by 胡晓阳 on 15/9/2.
+//  Created by 胡晓阳 on 15/9/6.
 //  Copyright (c) 2015年 HXY. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+//----------------------------------------------------声明回调Block---------------------------------------------------------
 /**
  *  配置Cell展现样式的代码块
  *
@@ -27,7 +27,40 @@ typedef void(^TableViewCellConfigureBlock)(id cell , id entity, NSIndexPath *ind
  */
 typedef NSInteger(^TableViewNumberOfRowsInSectionConfigureBlock)(NSInteger sectionNumber);
 
-@interface HXYArrayDataSource : NSObject <UITableViewDataSource>
+//------------------------------------------声明 HXYTableViewDelegate 的代理方法--------------------------------------------
+@protocol HXYTableViewDelegate <NSObject>
+
+@optional
+
+/**
+ *  点击或选中Cell的代理方法
+ *
+ *  @param indexPath
+ */
+-(void)selectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  删除Cell的代理方法
+ *
+ *  @param indexPath
+ */
+-(void)deleteRowAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  根据返回值判断Cell是否可以被编辑（移动，删除，插入等）
+ *
+ *  @return YES:can  NO:can not
+ */
+-(BOOL)isCellEditable;
+
+@end
+//-----------------------------------------BaseTableviewProtocol Interface-------------------------------------------------
+
+
+@interface BaseTableViewProtocol : NSObject <UITableViewDataSource, UITableViewDelegate>
+
+//声明UITableViewDelegate 和 UITableViewDataSource 的代理
+@property (nonatomic, assign) id<HXYTableViewDelegate> delegate;
 
 /**
  *  构造器1：有多个section，每个section中cell行数不定时使用

@@ -1,23 +1,23 @@
 //
-//  HXYArrayDataSource.m
+//  BaseTableViewProtocol.m
 //  HXYLightTableView
 //
-//  Created by 胡晓阳 on 15/9/2.
+//  Created by 胡晓阳 on 15/9/6.
 //  Copyright (c) 2015年 HXY. All rights reserved.
 //
 
-#import "HXYArrayDataSource.h"
+#import "BaseTableViewProtocol.h"
 
-@interface HXYArrayDataSource ()
+
+@interface BaseTableViewProtocol ()
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, copy) NSString *cellIdentifier;
 @property (nonatomic, assign) NSInteger numberOfSections;//section个数
 @property (nonatomic, copy) TableViewCellConfigureBlock configureCellBlock;
 @property (nonatomic, copy) TableViewNumberOfRowsInSectionConfigureBlock numberOfRowsInSectionConfigureBlock;
-
 @end
 
-@implementation HXYArrayDataSource
+@implementation BaseTableViewProtocol
 
 -(id)init{
     return nil;
@@ -49,7 +49,7 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
     return self.items[(NSInteger)indexPath.row];
 }
 
-#pragma mark - UITableViewDataSource 
+#pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.numberOfSections;
@@ -71,9 +71,28 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
     return cell;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(isCellEditable)]) {
+        return [self.delegate isCellEditable];
+    }
+    return NO;
+}
+
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(deleteRowAtIndexPath:)]) {
+            [self.delegate deleteRowAtIndexPath:indexPath];
+        }
+    }
+}
+
+
+#pragma mark - UITableViewDelegate Methods
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

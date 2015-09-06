@@ -14,9 +14,11 @@
 		0AEB826E1B96C98E0024EF50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB826D1B96C98E0024EF50 /* Images.xcassets */; };
 		0AEB82711B96C98E0024EF50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB826F1B96C98E0024EF50 /* LaunchScreen.xib */; };
 		0AEB827D1B96C98E0024EF50 /* HXYLightTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB827C1B96C98E0024EF50 /* HXYLightTableViewTests.m */; };
-		0AEB82881B96CA1A0024EF50 /* HXYArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB82871B96CA1A0024EF50 /* HXYArrayDataSource.m */; };
 		0AEB828B1B96CAD20024EF50 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AEB828A1B96CAD20024EF50 /* UIKit.framework */; };
 		0AEB828D1B96CAD90024EF50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AEB828C1B96CAD80024EF50 /* Foundation.framework */; };
+		0AFEC73D1B9BC69100F1D365 /* BaseTableViewProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFEC73C1B9BC69100F1D365 /* BaseTableViewProtocol.m */; };
+		0AFEC7421B9BCB9C00F1D365 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFEC7401B9BCB9C00F1D365 /* CustomCell.m */; };
+		0AFEC7431B9BCB9C00F1D365 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AFEC7411B9BCB9C00F1D365 /* CustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,11 +45,14 @@
 		0AEB82761B96C98E0024EF50 /* HXYLightTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HXYLightTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB827B1B96C98E0024EF50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AEB827C1B96C98E0024EF50 /* HXYLightTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HXYLightTableViewTests.m; sourceTree = "<group>"; };
-		0AEB82861B96CA1A0024EF50 /* HXYArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXYArrayDataSource.h; sourceTree = "<group>"; };
-		0AEB82871B96CA1A0024EF50 /* HXYArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXYArrayDataSource.m; sourceTree = "<group>"; };
 		0AEB828A1B96CAD20024EF50 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AEB828C1B96CAD80024EF50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0AEB828E1B96CB780024EF50 /* HXYLightTableView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HXYLightTableView-Prefix.pch"; sourceTree = "<group>"; };
+		0AFEC73B1B9BC69100F1D365 /* BaseTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewProtocol.h; sourceTree = "<group>"; };
+		0AFEC73C1B9BC69100F1D365 /* BaseTableViewProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewProtocol.m; sourceTree = "<group>"; };
+		0AFEC73F1B9BCB9C00F1D365 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		0AFEC7401B9BCB9C00F1D365 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		0AFEC7411B9BCB9C00F1D365 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,8 @@
 		0AEB825F1B96C98E0024EF50 /* HXYLightTableView */ = {
 			isa = PBXGroup;
 			children = (
+				0AFEC7441B9BCC0800F1D365 /* BaseTableviewProtocol */,
+				0AFEC73E1B9BCB7600F1D365 /* CustomCell */,
 				0AEB82671B96C98E0024EF50 /* ViewController.h */,
 				0AEB82681B96C98E0024EF50 /* ViewController.m */,
 				0AEB82641B96C98E0024EF50 /* AppDelegate.h */,
@@ -100,8 +107,6 @@
 				0AEB826D1B96C98E0024EF50 /* Images.xcassets */,
 				0AEB826F1B96C98E0024EF50 /* LaunchScreen.xib */,
 				0AEB82601B96C98E0024EF50 /* Supporting Files */,
-				0AEB82861B96CA1A0024EF50 /* HXYArrayDataSource.h */,
-				0AEB82871B96CA1A0024EF50 /* HXYArrayDataSource.m */,
 			);
 			path = HXYLightTableView;
 			sourceTree = "<group>";
@@ -140,6 +145,25 @@
 				0AEB828A1B96CAD20024EF50 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0AFEC73E1B9BCB7600F1D365 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				0AFEC73F1B9BCB9C00F1D365 /* CustomCell.h */,
+				0AFEC7401B9BCB9C00F1D365 /* CustomCell.m */,
+				0AFEC7411B9BCB9C00F1D365 /* CustomCell.xib */,
+			);
+			name = CustomCell;
+			sourceTree = "<group>";
+		};
+		0AFEC7441B9BCC0800F1D365 /* BaseTableviewProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				0AFEC73B1B9BC69100F1D365 /* BaseTableViewProtocol.h */,
+				0AFEC73C1B9BC69100F1D365 /* BaseTableViewProtocol.m */,
+			);
+			name = BaseTableviewProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +248,7 @@
 			files = (
 				0AEB826C1B96C98E0024EF50 /* Main.storyboard in Resources */,
 				0AEB82711B96C98E0024EF50 /* LaunchScreen.xib in Resources */,
+				0AFEC7431B9BCB9C00F1D365 /* CustomCell.xib in Resources */,
 				0AEB826E1B96C98E0024EF50 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,10 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AFEC73D1B9BC69100F1D365 /* BaseTableViewProtocol.m in Sources */,
 				0AEB82691B96C98E0024EF50 /* ViewController.m in Sources */,
 				0AEB82661B96C98E0024EF50 /* AppDelegate.m in Sources */,
-				0AEB82881B96CA1A0024EF50 /* HXYArrayDataSource.m in Sources */,
 				0AEB82631B96C98E0024EF50 /* main.m in Sources */,
+				0AFEC7421B9BCB9C00F1D365 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +466,7 @@
 				0AEB82821B96C98E0024EF50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AEB82831B96C98E0024EF50 /* Build configuration list for PBXNativeTarget "HXYLightTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +475,7 @@
 				0AEB82851B96C98E0024EF50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
