@@ -53,6 +53,7 @@
 		0AFEC73F1B9BCB9C00F1D365 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		0AFEC7401B9BCB9C00F1D365 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		0AFEC7411B9BCB9C00F1D365 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		0AFEC74C1B9BEC2900F1D365 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		0AEB825F1B96C98E0024EF50 /* HXYLightTableView */ = {
 			isa = PBXGroup;
 			children = (
+				0AFEC74B1B9BEBEB00F1D365 /* Application */,
 				0AFEC7441B9BCC0800F1D365 /* BaseTableviewProtocol */,
 				0AFEC73E1B9BCB7600F1D365 /* CustomCell */,
 				0AEB82671B96C98E0024EF50 /* ViewController.h */,
@@ -164,6 +166,14 @@
 				0AFEC73C1B9BC69100F1D365 /* BaseTableViewProtocol.m */,
 			);
 			name = BaseTableviewProtocol;
+			sourceTree = "<group>";
+		};
+		0AFEC74B1B9BEBEB00F1D365 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0AFEC74C1B9BEC2900F1D365 /* Constants.h */,
+			);
+			name = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

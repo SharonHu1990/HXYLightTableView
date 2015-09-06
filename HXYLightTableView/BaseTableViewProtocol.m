@@ -7,7 +7,7 @@
 //
 
 #import "BaseTableViewProtocol.h"
-
+#import "CustomCell.h"
 
 @interface BaseTableViewProtocol ()
 @property (nonatomic, strong) NSArray *items;
@@ -28,6 +28,7 @@
     self = [super init];
     if (self) {
         self.items = aItems;
+        self.numberOfSections = aSectionNumber;
         self.cellIdentifier = aCellIdentifier;
         self.numberOfRowsInSectionConfigureBlock = aNumberOfRowsInSectionConfigureBlock;
         self.configureCellBlock = aCellConfigureBlock;
@@ -46,7 +47,7 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
 
 -(id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.items[(NSInteger)indexPath.row];
+    return self.numberOfSections == 1 ? self.items[(NSInteger)indexPath.row] : self.items[(NSInteger)indexPath.section][(NSInteger)indexPath.row];
 }
 
 #pragma mark - UITableViewDataSource
@@ -89,10 +90,31 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
 }
 
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(titleForHeaderInSection:)])
+    {
+        return [self.delegate titleForHeaderInSection:section];
+    }
+    return @"";
+}
+
 #pragma mark - UITableViewDelegate Methods
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(selectRowAtIndexPath:)]) {
+        [self.delegate selectRowAtIndexPath:indexPath];
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(heightForRowAtIndexPath:)]) {
+        return [self.delegate heightForRowAtIndexPath:indexPath];
+    }
+    return 44.f;
 }
 
 

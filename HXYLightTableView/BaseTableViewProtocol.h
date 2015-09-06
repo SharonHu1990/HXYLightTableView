@@ -53,6 +53,26 @@ typedef NSInteger(^TableViewNumberOfRowsInSectionConfigureBlock)(NSInteger secti
  */
 -(BOOL)isCellEditable;
 
+/**
+ *  根据返回值确定每个section的标题
+ *
+ *  @param section
+ *
+ *  @return title
+ */
+-(NSString *)titleForHeaderInSection:(NSInteger)section;
+
+/**
+ *  根据返回结果确定section的View
+ *
+ *  @param section
+ *
+ *  @return 返回的view
+ */
+-(UIView *)viewForHeaderInSection:(NSInteger)section;
+
+-(CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 //-----------------------------------------BaseTableviewProtocol Interface-------------------------------------------------
 

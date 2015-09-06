@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface CustomCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *contentLB;
+@property (nonatomic, retain) NSDictionary *objectDic;
++(UINib *)customCellNib;
++(CGFloat)cellHeight;
 
+-(void)configureWithObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
 @end

@@ -13,14 +13,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="自定义Cell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBJ-yc-WRP">
-                        <rect key="frame" x="13" y="29" width="90" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自定义Cell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxc-xx-uVj">
+                        <rect key="frame" x="8" y="8" width="304" height="63"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Oxc-xx-uVj" secondAttribute="trailing" constant="8" id="8RP-CX-0SX"/>
+                    <constraint firstItem="Oxc-xx-uVj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ekt-Gl-Ds6"/>
+                    <constraint firstAttribute="bottom" secondItem="Oxc-xx-uVj" secondAttribute="bottom" constant="8" id="KgF-Ta-VMj"/>
+                    <constraint firstItem="Oxc-xx-uVj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="kZ2-ZB-HaJ"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLB" destination="Oxc-xx-uVj" id="3hQ-9y-lnU"/>
+            </connections>
             <point key="canvasLocation" x="789" y="441"/>
         </tableViewCell>
     </objects>
