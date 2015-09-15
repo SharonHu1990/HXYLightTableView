@@ -19,6 +19,9 @@
 
 static NSString * const CellID = @"CellID";
 #define TestItem @[@"测试1测试1测试1测试1测试1测试1测试1",@"测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1"]
+
+#define STR1 @"我们我们"
+#define STR2 @"我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们"
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -48,6 +51,17 @@ static NSString * const CellID = @"CellID";
         [cell configureWithObject:entity atIndexPath:indexPath];
     }];
     
+    self.baseTableViewProtocol.delegate = self;
+    self.table.dataSource = self.baseTableViewProtocol;
+    self.table.delegate = self.baseTableViewProtocol;
+    [self.table registerNib:[CustomCell customCellNib] forCellReuseIdentifier:CellID];
+    
+    //iOS8 新特性
+    self.table.rowHeight = UITableViewAutomaticDimension;
+    self.table.estimatedRowHeight = 44.f;
+    
+    
+    
     
     /*
     //只有一个section
@@ -56,9 +70,6 @@ static NSString * const CellID = @"CellID";
     }];
      */
     
-    self.table.dataSource = self.baseTableViewProtocol;
-    self.table.delegate = self.baseTableViewProtocol;
-    self.baseTableViewProtocol.delegate = self;
     
     //这一句不能漏掉，否则会报这个错误“Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3347.44/UITableView.m:6245”
     //默认Cell
@@ -75,10 +86,10 @@ static NSString * const CellID = @"CellID";
 
 #pragma mark - HXYTableViewDelegate Methods
 
--(CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [CustomCell cellHeight];
-}
+//-(CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return [CustomCell cellHeight];
+//}
 
 
 -(BOOL)isCellEditable

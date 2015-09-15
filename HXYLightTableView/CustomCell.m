@@ -11,12 +11,6 @@
 
 @implementation CustomCell
 
-+(CGFloat)cellHeight
-{
-
-    return 80.f;
-}
-
 +(UINib *)customCellNib
 {
     return [UINib nibWithNibName:@"CustomCell" bundle:nil];

@@ -71,7 +71,6 @@ typedef NSInteger(^TableViewNumberOfRowsInSectionConfigureBlock)(NSInteger secti
  */
 -(UIView *)viewForHeaderInSection:(NSInteger)section;
 
--(CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 //-----------------------------------------BaseTableviewProtocol Interface-------------------------------------------------

@@ -109,13 +109,7 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
     }
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(heightForRowAtIndexPath:)]) {
-        return [self.delegate heightForRowAtIndexPath:indexPath];
-    }
-    return 44.f;
-}
+
 
 
 @end
