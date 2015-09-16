@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "BaseTableViewProtocol.h"
 #import "CustomCell.h"
+#import "UITableView+PlaceholderView.h"
 
 @interface ViewController ()<HXYTableViewDelegate>
 @property (nonatomic, strong) BaseTableViewProtocol *baseTableViewProtocol;
@@ -31,7 +32,10 @@ static NSString * const CellID = @"CellID";
     self.table = [[UITableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.table];
     
-    [self setupTable];
+    [self.table registerPlaceholder:@"暂无内容"];
+    
+    
+//    [self setupTable];
     
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB252B01BA802BC00D3D729 /* UITableView+PlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB252AF1BA802BC00D3D729 /* UITableView+PlaceholderView.m */; };
+		0AB252B31BA802F500D3D729 /* TVPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB252B21BA802F500D3D729 /* TVPlaceholderView.m */; };
 		0AEB82631B96C98E0024EF50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB82621B96C98E0024EF50 /* main.m */; };
 		0AEB82661B96C98E0024EF50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB82651B96C98E0024EF50 /* AppDelegate.m */; };
 		0AEB82691B96C98E0024EF50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB82681B96C98E0024EF50 /* ViewController.m */; };
@@ -32,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AB252AE1BA802BC00D3D729 /* UITableView+PlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+PlaceholderView.h"; sourceTree = "<group>"; };
+		0AB252AF1BA802BC00D3D729 /* UITableView+PlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PlaceholderView.m"; sourceTree = "<group>"; };
+		0AB252B11BA802F500D3D729 /* TVPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVPlaceholderView.h; sourceTree = "<group>"; };
+		0AB252B21BA802F500D3D729 /* TVPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVPlaceholderView.m; sourceTree = "<group>"; };
 		0AEB825D1B96C98E0024EF50 /* HXYLightTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HXYLightTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB82611B96C98E0024EF50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AEB82621B96C98E0024EF50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,6 +82,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AB252AA1BA8025400D3D729 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AB252B11BA802F500D3D729 /* TVPlaceholderView.h */,
+				0AB252B21BA802F500D3D729 /* TVPlaceholderView.m */,
+				0AFEC73E1B9BCB7600F1D365 /* CustomCell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0AB252AB1BA8026D00D3D729 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0AFEC7441B9BCC0800F1D365 /* BaseTableviewProtocol */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		0AB252AC1BA8027700D3D729 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AEB82671B96C98E0024EF50 /* ViewController.h */,
+				0AEB82681B96C98E0024EF50 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0AB252AD1BA8028900D3D729 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0AB252AE1BA802BC00D3D729 /* UITableView+PlaceholderView.h */,
+				0AB252AF1BA802BC00D3D729 /* UITableView+PlaceholderView.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		0AEB82541B96C98E0024EF50 = {
 			isa = PBXGroup;
 			children = (
@@ -98,13 +140,11 @@
 		0AEB825F1B96C98E0024EF50 /* HXYLightTableView */ = {
 			isa = PBXGroup;
 			children = (
+				0AB252AD1BA8028900D3D729 /* Categories */,
+				0AB252AC1BA8027700D3D729 /* Controller */,
+				0AB252AB1BA8026D00D3D729 /* Base */,
+				0AB252AA1BA8025400D3D729 /* Views */,
 				0AFEC74B1B9BEBEB00F1D365 /* Application */,
-				0AFEC7441B9BCC0800F1D365 /* BaseTableviewProtocol */,
-				0AFEC73E1B9BCB7600F1D365 /* CustomCell */,
-				0AEB82671B96C98E0024EF50 /* ViewController.h */,
-				0AEB82681B96C98E0024EF50 /* ViewController.m */,
-				0AEB82641B96C98E0024EF50 /* AppDelegate.h */,
-				0AEB82651B96C98E0024EF50 /* AppDelegate.m */,
 				0AEB826A1B96C98E0024EF50 /* Main.storyboard */,
 				0AEB826D1B96C98E0024EF50 /* Images.xcassets */,
 				0AEB826F1B96C98E0024EF50 /* LaunchScreen.xib */,
@@ -171,6 +211,8 @@
 		0AFEC74B1B9BEBEB00F1D365 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0AEB82641B96C98E0024EF50 /* AppDelegate.h */,
+				0AEB82651B96C98E0024EF50 /* AppDelegate.m */,
 				0AFEC74C1B9BEC2900F1D365 /* Constants.h */,
 			);
 			name = Application;
@@ -278,7 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AFEC73D1B9BC69100F1D365 /* BaseTableViewProtocol.m in Sources */,
+				0AB252B31BA802F500D3D729 /* TVPlaceholderView.m in Sources */,
 				0AEB82691B96C98E0024EF50 /* ViewController.m in Sources */,
+				0AB252B01BA802BC00D3D729 /* UITableView+PlaceholderView.m in Sources */,
 				0AEB82661B96C98E0024EF50 /* AppDelegate.m in Sources */,
 				0AEB82631B96C98E0024EF50 /* main.m in Sources */,
 				0AFEC7421B9BCB9C00F1D365 /* CustomCell.m in Sources */,
@@ -346,8 +390,11 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HXYLightTableView/HXYLightTableView-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -389,7 +436,10 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HXYLightTableView/HXYLightTableView-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -407,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = HXYLightTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -417,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = HXYLightTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
