@@ -32,15 +32,16 @@ static NSString * const CellID = @"CellID";
     self.table = [[UITableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.table];
     
-    [self.table registerPlaceholder:@"暂无内容"];
     
-    
-//    [self setupTable];
+    [self setupTable];
     
 }
 
 -(void)setupTable
 {
+    
+    [self.table registerPlaceholder:@"暂无内容"];
+    
     _testItems1 = [NSMutableArray arrayWithObjects:@"测试1测试1测试1测试1测试1测试1测试1", @"测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1", nil];
 
     _testItems2 = [NSMutableArray arrayWithObjects:[NSMutableArray arrayWithArray:_testItems1], [NSMutableArray arrayWithArray:_testItems1], [NSMutableArray arrayWithArray:_testItems1] ,nil];
@@ -65,7 +66,10 @@ static NSString * const CellID = @"CellID";
     self.table.estimatedRowHeight = 44.f;
     
     
-    
+    //设置分割线从头开始
+    if ([self.table respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.table setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
+    }
     
     /*
     //只有一个section
@@ -89,14 +93,12 @@ static NSString * const CellID = @"CellID";
 }
 
 #pragma mark - HXYTableViewDelegate Methods
-
-//-(CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return [CustomCell cellHeight];
-//}
-
-
 -(BOOL)isCellEditable
+{
+    return YES;
+}
+
+-(BOOL)isCellSeparatorCloseToTheBorder
 {
     return YES;
 }

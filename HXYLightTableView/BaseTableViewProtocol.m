@@ -69,6 +69,19 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
     self.configureCellBlock(cell, [self itemAtIndexPath:indexPath], indexPath);
+    
+    
+    if (self.delegate && [self.delegate isCellSeparatorCloseToTheBorder]) {
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            [cell setSeparatorInset:UIEdgeInsetsZero];
+        }
+        
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [cell setLayoutMargins:UIEdgeInsetsZero];
+        }
+    }
+    
+    
     return cell;
 }
 
@@ -79,6 +92,7 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
     }
     return NO;
 }
+
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -60,6 +60,8 @@ typedef NSInteger(^TableViewNumberOfRowsInSectionConfigureBlock)(NSInteger secti
  *
  *  @return title
  */
+
+
 -(NSString *)titleForHeaderInSection:(NSInteger)section;
 
 /**
@@ -71,6 +73,13 @@ typedef NSInteger(^TableViewNumberOfRowsInSectionConfigureBlock)(NSInteger secti
  */
 -(UIView *)viewForHeaderInSection:(NSInteger)section;
 
+
+/**
+ *  根据返回值确定是否Cell的分割线样式头部紧挨边界
+ *
+ *  @return  YES:分割线样式头部紧挨边界  NO:默认样式
+ */
+-(BOOL)isCellSeparatorCloseToTheBorder;
 
 @end
 //-----------------------------------------BaseTableviewProtocol Interface-------------------------------------------------
