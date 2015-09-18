@@ -85,8 +85,6 @@
 		0AB252AA1BA8025400D3D729 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0AB252B11BA802F500D3D729 /* TVPlaceholderView.h */,
-				0AB252B21BA802F500D3D729 /* TVPlaceholderView.m */,
 				0AFEC73E1B9BCB7600F1D365 /* CustomCell */,
 			);
 			name = Views;
@@ -202,6 +200,8 @@
 		0AFEC7441B9BCC0800F1D365 /* BaseTableviewProtocol */ = {
 			isa = PBXGroup;
 			children = (
+				0AB252B11BA802F500D3D729 /* TVPlaceholderView.h */,
+				0AB252B21BA802F500D3D729 /* TVPlaceholderView.m */,
 				0AFEC73B1B9BC69100F1D365 /* BaseTableViewProtocol.h */,
 				0AFEC73C1B9BC69100F1D365 /* BaseTableViewProtocol.m */,
 			);

@@ -34,13 +34,13 @@ static NSString * const CellID = @"CellID";
     
     
     [self setupTable];
-    
 }
 
 -(void)setupTable
 {
     
     [self.table registerPlaceholder:@"暂无内容"];
+    
     
     _testItems1 = [NSMutableArray arrayWithObjects:@"测试1测试1测试1测试1测试1测试1测试1", @"测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1", nil];
 

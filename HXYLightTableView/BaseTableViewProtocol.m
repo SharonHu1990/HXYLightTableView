@@ -114,6 +114,7 @@ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
     return @"";
 }
 
+
 #pragma mark - UITableViewDelegate Methods
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
